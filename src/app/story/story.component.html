@@ -1,0 +1,16 @@
+<div *ngIf="stories?.length > 0; else noStories" > 
+  <ul *ngFor="let story of stories">
+    <mat-card>
+      <mat-card-title>{{story.titel }}</mat-card-title>
+        <mat-card-subtitle>{{story.date | date:'medium'}}</mat-card-subtitle>
+        <mat-card-content>
+          <p>{{story.text}}</p>
+      </mat-card-content>
+    </mat-card> 
+  </ul>
+</div>
+
+<ng-template #noStories>
+  <hr>
+  <h5>Es befinden sich keine Stories in der Datenbank</h5>
+</ng-template>
