@@ -14,7 +14,7 @@ export class StoryService {
 
     }
 
-    getStories(){
+    getStories(): Observable<any> {
         return this.stories;
     }
 
