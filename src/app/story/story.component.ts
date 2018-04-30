@@ -9,14 +9,11 @@ import { Story } from '../models/story.model';
   styleUrls: ['./story.component.css']
 })
 export class StoryComponent implements OnInit {
-  stories: Story[];
+  stories$: Observable<any>;
 
   constructor(private storyService: StoryService) { }
 
   ngOnInit() {
-    this.storyService.getStories().subscribe(stories => {
-      this.stories = stories;
-    });
+    this.stories$ = this.storyService.getStories();
   }
-
 }
